@@ -1,11 +1,10 @@
-# php-array-parser
-
-✨ Parse a PHP array into JavaScript
+<h1 align="center">PHP array Parser</h1>
+<p align="center">Parse a PHP array into JavaScript!</p>
 
 ## Installation
 
 ```shell
-  npm install php-array-parser
+npm install php-array-parser
 ```
 
 ## Usage
