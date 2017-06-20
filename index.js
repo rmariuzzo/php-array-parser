@@ -1,5 +1,5 @@
-const engine = require('php-parser')
-const parser = new engine({
+var engine = require('php-parser')
+var parser = new engine({
   parser: { extractDoc: true },
   ast: { withPositions: true },
 })
@@ -9,9 +9,9 @@ const parser = new engine({
  * @param  {String} source The PHP source contents.
  * @return {Object}        The parsed contents.
  */
-const parse = function (source) {
-  const ast = parser.parseEval(source)
-  const array = ast.children.find((child) => child.kind === 'array')
+var parse = function (source) {
+  var ast = parser.parseEval(source)
+  var array = ast.children.find((child) => child.kind === 'array')
   return parseValue(array)
 }
 
@@ -26,8 +26,8 @@ function parseValue(expr) {
       if (expr.items.length === 0) {
         return [];
       }
-      const isKeyed = expr.items.every((item) => item.key !== null)
-      let items = expr.items.map(parseValue)
+      var isKeyed = expr.items.every((item) => item.key !== null)
+      var items = expr.items.map(parseValue)
       if (isKeyed) {
         items = items.reduce((acc, val) => Object.assign({}, acc, val), {})
       }

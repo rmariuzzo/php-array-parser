@@ -1,7 +1,7 @@
-const parser = require('./index')
+var parser = require('./index')
 
 test('simple array', () => {
-  const parsed = parser.parse(`
+  var parsed = parser.parse(`
     array(
       "foo" => "bar",
       "bar" => "foo",
@@ -14,7 +14,7 @@ test('simple array', () => {
 })
 
 test('simple array (as of PHP 5.4)', () => {
-  const parsed = parser.parse(`
+  var parsed = parser.parse(`
     [
       "foo" => "bar",
       "bar" => "foo",
@@ -27,7 +27,7 @@ test('simple array (as of PHP 5.4)', () => {
 })
 
 test('type casting', () => {
-  const parsed = parser.parse(`
+  var parsed = parser.parse(`
     [
       true => "a",
       2    => "b",
@@ -44,7 +44,7 @@ test('type casting', () => {
 })
 
 test('overwriting', () => {
-  const parsed = parser.parse(`
+  var parsed = parser.parse(`
     [
       1 => "a",
       true => "b",
@@ -56,7 +56,7 @@ test('overwriting', () => {
 })
 
 test('mixed integer and string keys', () => {
-  const parsed = parser.parse(`
+  var parsed = parser.parse(`
     [
       "foo" => "bar",
       "bar" => "foo",
@@ -73,7 +73,7 @@ test('mixed integer and string keys', () => {
 })
 
 test('indexed array without key', () => {
-  const parsed = parser.parse(`
+  var parsed = parser.parse(`
     array(
       "foo",
       "bar",
@@ -106,6 +106,6 @@ test('indexed array without key', () => {
 })
 
 test('empty array', () => {
-  const parsed = parser.parse('array()')
+  var parsed = parser.parse('array()')
   expect(parsed).toEqual([])
 })
