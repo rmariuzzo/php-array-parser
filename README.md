@@ -1,6 +1,8 @@
 <h1 align="center">PHP array Parser</h1>
 <p align="center">Parse a PHP array into JavaScript!</p>
 
+[![Build Status](https://travis-ci.org/rmariuzzo/php-array-parser.svg?branch=master)](https://travis-ci.org/rmariuzzo/php-array-parser)
+
 ## Installation
 
 ```shell
